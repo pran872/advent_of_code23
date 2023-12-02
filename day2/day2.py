@@ -22,7 +22,7 @@ def part_1(lines):
             _, game_no = game_no.split(" ")
             valid_games.append(int(game_no))
         
-    print(sum(valid_games))
+    print(sum(valid_games)) ##3059
 
 def part_2(lines):
     powers = []
@@ -40,7 +40,7 @@ def part_2(lines):
         power = max_col["red"] * max_col["green"] * max_col["blue"]
         powers.append(power)
     
-    print(sum(powers))
+    print(sum(powers)) #65371
 
 
 lines = read_file("day2.txt")
