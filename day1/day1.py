@@ -6,7 +6,7 @@ def read_file(f_path):
     return lines
 
 def part_1(lines):
-    to_add = []
+    to_add = 0
     for line in lines:
         f_line = line
         b_line = line[::-1]
@@ -21,17 +21,16 @@ def part_1(lines):
             
             if found_f and found_b:
                 break
-        
-        line_no = int(found_f + found_b)
-        to_add.append(line_no)
+ 
+        to_add += int(found_f + found_b)
 
-    print(sum(to_add)) #54634
+    print(to_add) #54634
 
 def part_2(lines):
     num_words = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
     str_to_num = {word: str(num) for num, word in enumerate(num_words, start=1)}
     
-    to_add = []
+    to_add = 0
     for line in lines:
         line_dict = {}
         for ind, char in enumerate(line):
@@ -46,10 +45,9 @@ def part_2(lines):
 
         min_ind = min(list(line_dict.keys()))
         max_ind = max(list(line_dict.keys()))
-        line_no = int(line_dict[min_ind] + line_dict[max_ind])
-        to_add.append(line_no)
+        to_add += int(line_dict[min_ind] + line_dict[max_ind])
 
-    print(sum(to_add)) #53855
+    print(to_add) #53855
 
 start = time.time()        
 lines = read_file("day1.txt")
